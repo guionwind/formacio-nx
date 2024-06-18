@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
-
+import { CommonModule } from '@angular/common';
+import { getAllGames } from '../fake-api';
+import { MatCardModule } from '@angular/material/card';
 @Component({
   standalone: true,
-  imports: [NxWelcomeComponent, RouterModule],
-  selector: 'app-root',
+  selector: 'bg-hoard-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  styleUrls: ['./app.component.css'],
+  imports: [MatCardModule, CommonModule],
 })
 export class AppComponent {
-  title = 'store';
+  title = 'Board Game Hoard';
+  games = getAllGames();
 }
